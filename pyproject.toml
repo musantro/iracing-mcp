@@ -1,18 +1,13 @@
 [project]
 name = "iracing-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "A model context protocol server to chat with iRacing data."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [
-    { name = "Antonio Rodríguez", email = "hi@musantro.com" }
-]
+authors = [{ name = "Antonio Rodríguez", email = "hi@musantro.com" }]
 requires-python = ">=3.11.8"
-dependencies = [
-    "iracingdataapi>=1.2.2",
-    "mcp[cli]>=1.6.0",
-]
+dependencies = ["iracingdataapi>=1.2.2", "mcp[cli]>=1.6.0"]
 
 [project.scripts]
 server = "iracing_mcp.entrypoints.server:main"
@@ -51,3 +46,4 @@ select = [
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
