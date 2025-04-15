@@ -1,0 +1,53 @@
+[project]
+name = "iracing-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Antonio Rodríguez", email = "hi@musantro.com" }
+]
+requires-python = ">=3.11.8"
+dependencies = [
+    "iracingdataapi>=1.2.2",
+    "mcp[cli]>=1.6.0",
+]
+
+[project.scripts]
+server = "iracing_mcp.entrypoints.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 119
+
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = [
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
+  # flake8-async
+  "ASYNC",
+  # pydocstyle
+  "D",
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**/*.py" = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
