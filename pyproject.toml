@@ -60,8 +60,8 @@ parse = """(?x)
     )?                                # pre-release section is optional
 """
 serialize = [
-    "{major}.{minor}.{patch}.{pre_l}{pre_n}",
-    "{major}.{minor}.{patch}",
+  "{major}.{minor}.{patch}.{pre_l}{pre_n}",
+  "{major}.{minor}.{patch}",
 ]
 search = "{current_version}"
 replace = "{new_version}"
@@ -75,6 +75,7 @@ allow_dirty = false
 commit = true
 message = "Bump version: {current_version} → {new_version}"
 commit_args = ""
+pre_commit_hooks = ["uv sync", "git add uv.lock"]
 
 
 [tool.bumpversion.parts.pre_l]
