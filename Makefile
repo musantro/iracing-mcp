@@ -5,3 +5,9 @@ lint:
 
 format: 
 	uvx ruff@latest format
+
+build:
+	del dist /q && uv build
+
+publish: build
+	uv publish
