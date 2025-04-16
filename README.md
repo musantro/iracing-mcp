@@ -12,9 +12,41 @@ iRacing MCP is a Python-based project that integrates iRacing with the Model Con
 ### Prerequisites
 
 - uv - [Install here](https://docs.astral.sh/uv/getting-started/installation/)
-- iRacing account with legacy authentication (required) - Disable it here: https://oauth.iracing.com/accountmanagement/security
+- iRacing account with legacy authentication (required) - Enable it here: https://oauth.iracing.com/accountmanagement/security
 
-### Installation
+## Usage
+
+### Running the Server Standalone
+
+To start the MCP server, run:
+
+```bash
+IRACING_USERNAME="your username" IRACING_PASSWORD="your-password" uvx iracing-mcp
+```
+
+### Running the Server on VSCode
+
+Add this to your settings.json (in `mcp.servers`):
+
+```json
+"iracing": {
+    "command": "uvx",
+    "args": [
+        "iracing-mcp@latest"
+    ],
+    "env": {
+        "IRACING_USERNAME": "your-username",
+        "IRACING_PASSWORD": "your password"
+    }
+}
+```
+
+### Running the Server on other MCP Clients
+
+Currently I am only using VS Code as MCP Client so I don't know how to configure to other MCP Clients.
+I am happy to receive PRs on how to configure in the different MCP Servers (e.g. Cursor, Claude Desktop, etc.)
+
+### Development
 
 1. Clone the repository:
 
@@ -35,39 +67,7 @@ iRacing MCP is a Python-based project that integrates iRacing with the Model Con
    export IRACING_PASSWORD="your_password"
    ```
 
-## Usage
-
-### Running the Server Standalone
-
-To start the MCP server, run:
-
-```bash
-uv run server
-```
-
-### Running the Server on VSCode
-
-Add this to your settings.json (in `mcp.servers`):
-
-```json
-"iracing": {
-    "command": "path/to/your/uv",
-    "args": [
-        "--directory",
-        "path/to/your/iracing-mcp",
-        "run",
-        "server"
-    ],
-    "env": {
-        "IRACING_USERNAME": "your-username",
-        "IRACING_PASSWORD": "your password"
-    }
-}
-```
-
-## Development
-
-### Linting and Formatting
+#### Linting and Formatting
 
 Use the following commands to lint and format the code:
 

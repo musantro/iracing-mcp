@@ -10,7 +10,7 @@ requires-python = ">=3.11.8"
 dependencies = ["iracingdataapi>=1.2.2", "mcp[cli]>=1.6.0"]
 
 [project.scripts]
-server = "iracing_mcp.entrypoints.server:main"
+iracing-mcp = "iracing_mcp.entrypoints.server:main"
 
 [build-system]
 requires = ["hatchling"]
