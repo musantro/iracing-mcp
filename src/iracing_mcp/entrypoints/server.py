@@ -8,18 +8,13 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("iRacing Data", dependencies=["iracingdataapi"])
 
+
 @mcp.tool()
 def get_iracing_profile_stats() -> dict[str, Any]:
     """Get the current iRacing profile statistics.
 
     Retrieves the user's iRacing profile information including license level,
     iRating, and other career stats.
-
-    Returns:
-        Dict containing the user's iRacing profile statistics.
-
-    Raises:
-        ValueError: If environment variables for credentials are not set.
     """
     username = os.environ.get("IRACING_USERNAME")
     password = os.environ.get("IRACING_PASSWORD")
