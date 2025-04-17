@@ -160,7 +160,7 @@ wheels = [
 
 [[package]]
 name = "iracing-mcp"
-version = "0.1.2.dev2"
+version = "0.1.2.dev3"
 source = { editable = "." }
 dependencies = [
     { name = "iracingdataapi" },
