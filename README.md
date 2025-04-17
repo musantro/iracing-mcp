@@ -12,7 +12,7 @@ iRacing MCP is a Python-based project that integrates iRacing with the Model Con
 ### Prerequisites
 
 - uv - [Install here](https://docs.astral.sh/uv/getting-started/installation/)
-- iRacing account with legacy authentication (required) - Enable it here: https://oauth.iracing.com/accountmanagement/security
+- iRacing account with legacy authentication (required) - Enable it here: <https://oauth.iracing.com/accountmanagement/security>
 
 ## Usage
 
@@ -35,8 +35,29 @@ Add this to your settings.json (in `mcp.servers`):
         "iracing-mcp@latest"
     ],
     "env": {
-        "IRACING_USERNAME": "your-username",
+        "IRACING_USERNAME": "your@email.com",
         "IRACING_PASSWORD": "your password"
+    }
+}
+```
+
+### Running the MCP Server on Claude Desktop
+
+Add this to your settings.json:
+
+```json
+[
+    "mcpServers": {
+        "iracing": {
+            "command": "uvx",
+            "args": [
+                "iracing-mcp@latest"
+            ],
+            "env": {
+                "IRACING_USERNAME": "your@email.com",
+                "IRACING_PASSWORD": "your-password"
+            }
+        }
     }
 }
 ```
@@ -62,6 +83,7 @@ I am happy to receive PRs on how to configure in the different MCP Servers (e.g.
    ```
 
 3. Set up environment variables for iRacing credentials:
+
    ```bash
    export IRACING_USERNAME="your_username"
    export IRACING_PASSWORD="your_password"
