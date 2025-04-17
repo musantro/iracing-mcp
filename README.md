@@ -5,6 +5,7 @@ iRacing MCP is a Python-based project that integrates iRacing with the Model Con
 ## Features
 
 - Retrieve iRacing profile statistics.
+- Get iRating chart (for any category)
 - More coming soon
 
 ## Getting Started
